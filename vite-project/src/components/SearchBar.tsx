@@ -1,20 +1,20 @@
 import React from 'react';
 
-type SearchBarProps = {
+interface SearchBarProps {
   searchTerm: string;
   onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-};
+}
 
 const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchChange }) => {
   return (
     <input
       type="text"
-      placeholder="Search for a beer..."
       value={searchTerm}
       onChange={onSearchChange}
-      className="search-bar"
+      placeholder="Search for cocktails..."
     />
   );
 };
 
 export default SearchBar;
+

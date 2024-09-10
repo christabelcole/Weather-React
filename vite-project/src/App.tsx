@@ -1,17 +1,14 @@
 import React from 'react';
-import WeatherAndBeerMatcher from './containers/WeatherAndBeerMatcher';
+import WeatherAndCocktailMatcher from './containers/WeatherAndCocktailMatcher'; // Ensure path is correct
 import './App.css';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <WeatherAndBeerMatcher />
+      <WeatherAndCocktailMatcher />
     </div>
   );
 };
 
 export default App;
-
-
-
 

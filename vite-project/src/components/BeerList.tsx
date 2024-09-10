@@ -1,37 +1,31 @@
+// src/components/BeerList.tsx
 import React from 'react';
-import BeerCard from './BeerCard';
 
-type Beer = {
+interface Beer {
   id: number;
   name: string;
   tagline: string;
-  image_url: string;
   abv: number;
-  first_brewed: string;
   ph: number;
-};
+  first_brewed: string;
+}
 
-type BeerListProps = {
+interface BeerListProps {
   beers: Beer[];
-};
+}
 
-const BeerList: React.FC<BeerListProps> = ({ beers }) => {
-  return (
-    <div className="beer-list">
-      {beers.map((beer) => (
-        <BeerCard
-          key={beer.id}
-          name={beer.name}
-          tagline={beer.tagline}
-          image_url={beer.image_url}
-          abv={beer.abv}
-          first_brewed={beer.first_brewed}
-          ph={beer.ph}
-        />
-      ))}
-    </div>
-  );
-};
+const BeerList: React.FC<BeerListProps> = ({ beers }) => (
+  <div>
+    {beers.map((beer) => (
+      <div key={beer.id}>
+        <h3>{beer.name}</h3>
+        <p>{beer.tagline}</p>
+        <p>ABV: {beer.abv}%</p>
+        <p>First Brewed: {beer.first_brewed}</p>
+        <p>pH: {beer.ph}</p>
+      </div>
+    ))}
+  </div>
+);
 
 export default BeerList;
-
