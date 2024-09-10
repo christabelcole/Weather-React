@@ -1,22 +1,23 @@
-// src/components/SearchBar.tsx
 import React from 'react';
 
 interface SearchBarProps {
   searchTerm: string;
-  onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSearchSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchChange }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, handleSearchChange, handleSearchSubmit }) => {
   return (
-    <div className="search-bar">
+    <form onSubmit={handleSearchSubmit}>
       <input
         type="text"
         value={searchTerm}
-        onChange={onSearchChange}
-        placeholder="Search for cocktails..."
+        onChange={handleSearchChange}
+        placeholder="Enter a location"
       />
-    </div>
+      <button type="submit">Search</button>
+    </form>
   );
-};
+}
 
 export default SearchBar;

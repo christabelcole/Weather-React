@@ -1,29 +1,22 @@
-// src/components/CocktailList.tsx
 import React from 'react';
-
-interface Cocktail {
-  idDrink: string;
-  strDrink: string;
-  strDrinkThumb: string;
-}
+import { CocktailData } from '../containers/WeatherAndCocktailMatcher';
 
 interface CocktailListProps {
-  cocktails: Cocktail[];
+  cocktails: CocktailData[];
 }
 
 const CocktailList: React.FC<CocktailListProps> = ({ cocktails }) => {
   return (
     <div className="cocktail-list">
-      {cocktails.length ? (
-        cocktails.map((cocktail) => (
-          <div key={cocktail.idDrink} className="cocktail-card">
+      <h2>Cocktail Suggestions</h2>
+      <ul>
+        {cocktails.map((cocktail) => (
+          <li key={cocktail.idDrink}>
             <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-            <h3>{cocktail.strDrink}</h3>
-          </div>
-        ))
-      ) : (
-        <p>No cocktails found.</p>
-      )}
+            {cocktail.strDrink}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
