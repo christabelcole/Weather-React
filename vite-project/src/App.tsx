@@ -1,11 +1,11 @@
 import React from 'react';
-import WeatherAndCocktailMatcher from './containers/WeatherAndCocktailMatcher';
-import './App.css';
+import RecipeMatcher from './containers/RecipeMatcher';
+import './index.scss'; // Ensure this file exists
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <WeatherAndCocktailMatcher />
+    <div className="app">
+      <RecipeMatcher />
     </div>
   );
 };
