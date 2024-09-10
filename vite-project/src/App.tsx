@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherAndCocktailMatcher from './containers/WeatherAndCocktailMatcher'; // Ensure path is correct
+import WeatherAndCocktailMatcher from './containers/WeatherAndCocktailMatcher';
 import './App.css';
 
 const App: React.FC = () => {
@@ -11,4 +11,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-

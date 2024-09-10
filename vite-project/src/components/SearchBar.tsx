@@ -1,3 +1,4 @@
+// src/components/SearchBar.tsx
 import React from 'react';
 
 interface SearchBarProps {
@@ -7,14 +8,15 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchChange }) => {
   return (
-    <input
-      type="text"
-      value={searchTerm}
-      onChange={onSearchChange}
-      placeholder="Search for cocktails..."
-    />
+    <div className="search-bar">
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={onSearchChange}
+        placeholder="Search for cocktails..."
+      />
+    </div>
   );
 };
 
 export default SearchBar;
-
