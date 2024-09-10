@@ -23,3 +23,4 @@ const BeerCard: React.FC<BeerCardProps> = ({ name, tagline, image_url, abv, firs
 };
 
 export default BeerCard;
+
